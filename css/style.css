@@ -1,0 +1,57 @@
+body {
+  background-color: #f7f9fb;
+  font-family: "Inter", sans-serif;
+}
+.clinical-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+.clinical-gradient {
+  background: linear-gradient(135deg, #f7f9fb 0%, #e2e8f0 100%);
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+}
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.sidebar-active {
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  border-right: 4px solid #2563eb;
+}
