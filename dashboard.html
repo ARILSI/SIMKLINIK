@@ -1,0 +1,683 @@
+<!doctype html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SIMKLINIK - Clinical Management System</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "on-background": "#191c1e",
+              "outline-variant": "#c2c6d8",
+              "on-surface-variant": "#424655",
+              outline: "#727787",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#000703",
+              "inverse-on-surface": "#eff1f3",
+              "primary-container": "#0d6efd",
+              "on-primary-container": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#002113",
+              "on-primary-fixed-variant": "#00419e",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-surface": "#2d3133",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-secondary-container": "#54647a",
+              background: "#f7f9fb",
+              tertiary: "#006c49",
+              "surface-bright": "#f7f9fb",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#eceef0",
+              "surface-tint": "#0057ce",
+              "tertiary-container": "#00885d",
+              surface: "#f7f9fb",
+              secondary: "#505f76",
+              "on-secondary-fixed": "#0b1c30",
+              "on-surface": "#191c1e",
+              "inverse-primary": "#b1c5ff",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary-fixed-variant": "#38485d",
+              "secondary-container": "#d0e1fb",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#dae2ff",
+              "secondary-fixed": "#d3e4fe",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              primary: "#0057cd",
+              error: "#ba1a1a",
+              "surface-container-high": "#e6e8ea",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-primary-fixed": "#001946",
+              "on-tertiary-fixed-variant": "#005236",
+              "tertiary-fixed": "#6ffbbe",
+              "surface-variant": "#e0e3e5",
+              "on-error-container": "#93000a",
+              "surface-dim": "#d8dadc",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xs: "0.25rem",
+              "container-max": "1440px",
+              sm: "0.5rem",
+              xl: "2rem",
+              gutter: "1.5rem",
+              base: "4px",
+              lg: "1.5rem",
+              md: "1rem",
+            },
+            fontFamily: {
+              "label-caps": ["Inter"],
+              h2: ["Manrope"],
+              h3: ["Manrope"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              h1: ["Manrope"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              "label-caps": [
+                "0.75rem",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              h2: ["2rem", { lineHeight: "1.3", fontWeight: "600" }],
+              h3: ["1.5rem", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-md": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
+              "body-lg": ["1.125rem", { lineHeight: "1.6", fontWeight: "400" }],
+              h1: ["2.5rem", { lineHeight: "1.2", fontWeight: "700" }],
+              "body-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-body-md text-on-background antialiased">
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex flex-col z-50 overflow-y-auto"
+    >
+      <div class="px-6 py-8">
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-sm"
+          >
+            <span
+              class="material-symbols-outlined text-white"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >medical_services</span
+            >
+          </div>
+          <div>
+            <h1 class="text-lg font-black text-blue-700 tracking-tight">
+              SIMKLINIK
+            </h1>
+            <p
+              class="text-[10px] uppercase tracking-widest text-slate-500 font-bold"
+            >
+              Clinical Management System
+            </p>
+          </div>
+        </div>
+        <nav class="space-y-1">
+          <a
+            class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-700 border-r-4 border-blue-600 font-bold rounded-l-lg"
+            href="dashboard.html"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-manrope text-sm tracking-wide">Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="pasien.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-manrope text-sm tracking-wide">Pasien</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="jadwal.html"
+          >
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span class="font-manrope text-sm tracking-wide">Jadwal</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="medis.html"
+          >
+            <span class="material-symbols-outlined">medical_services</span>
+            <span class="font-manrope text-sm tracking-wide">Medis</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="tagihan.html"
+          >
+            <span class="material-symbols-outlined">receipt_long</span>
+            <span class="font-manrope text-sm tracking-wide">Tagihan</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="pengaturan.html"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-manrope text-sm tracking-wide">Pengaturan</span>
+          </a>
+        </nav>
+      </div>
+      <div class="mt-auto p-6 border-t border-slate-200">
+        <button
+          type="button"
+          onclick="window.location.href = 'index.html'"
+          class="flex items-center gap-3 px-4 py-3 w-full text-slate-600 hover:bg-error-container hover:text-error transition-all rounded-lg"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          <span class="font-manrope text-sm tracking-wide">Logout</span>
+        </button>
+      </div>
+    </aside>
+    <header
+      class="fixed top-0 right-0 left-64 bg-white/80 backdrop-blur-md border-b border-slate-200 z-40"
+    >
+      <div class="flex justify-between items-center w-full px-8 py-4">
+        <div class="relative w-96">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            >search</span
+          >
+          <input
+            class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-full text-sm focus:ring-2 focus:ring-primary-container"
+            placeholder="Cari pasien, jadwal, atau rekam medis..."
+            type="text"
+          />
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="flex gap-4 border-r border-slate-200 pr-6">
+            <button
+              class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-all relative"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+              <span
+                class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"
+              ></span>
+            </button>
+            <button
+              class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-all"
+            >
+              <span class="material-symbols-outlined">help</span>
+            </button>
+          </div>
+          <div class="flex items-center gap-3 pl-2">
+            <div class="text-right">
+              <p class="text-sm font-bold text-on-background">Dr. Handoko</p>
+              <p class="text-[10px] text-slate-500 font-medium">
+                Spesialis Penyakit Dalam
+              </p>
+            </div>
+            <img
+              alt="User Profile Avatar"
+              class="w-10 h-10 rounded-full border-2 border-primary-container object-cover"
+              data-alt="professional portrait of a male doctor in a white clinical coat smiling confidently in a modern medical setting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLY01KTpVGqqC8ZYey-a1g1arRrzEATTlnKrydU1UVwyjGW2bGgPpe644OlPRXanahutZaExfmuZ4xrAuEqhqjwpUuFKYWO1fyfN1J9VPKrhnR_n87QnkThrKgZvjM9y2SVs89hGzuUqy3aYq_eoW5YhzqbM0AGjaAZZXMrtDEO41BqnKlYLpiujtmrP1vxK3zRodV-o7xMzxUKoEWLTOioytEzDimUy1zKU1Nl1YxwF14xR6IcMlhEcWdzFDQN1qV1_2h9eCAezp8"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="ml-64 mt-20 p-8 space-y-8 max-w-7xl mx-auto">
+      <section>
+        <h2 class="font-h1 text-h1 text-on-background mb-2">
+          Selamat Pagi, Dokter
+        </h2>
+        <p class="text-secondary font-body-md">
+          Anda memiliki 12 janji temu terdaftar untuk hari ini. Pantau kesehatan
+          pasien Anda dengan mudah.
+        </p>
+      </section>
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-200 clinical-shadow flex items-start gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >groups</span
+            >
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-medium">Total Pasien</p>
+            <h3 class="text-2xl font-bold text-on-background">2,482</h3>
+            <p
+              class="text-xs text-tertiary font-semibold flex items-center mt-1"
+            >
+              <span class="material-symbols-outlined text-xs mr-1"
+                >trending_up</span
+              >
+              +12% bln ini
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-200 clinical-shadow flex items-start gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >event_available</span
+            >
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-medium">
+              Janji Temu Hari Ini
+            </p>
+            <h3 class="text-2xl font-bold text-on-background">12</h3>
+            <p
+              class="text-xs text-slate-500 font-medium flex items-center mt-1"
+            >
+              4 sudah selesai
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-200 clinical-shadow flex items-start gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >pending_actions</span
+            >
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-medium">Tagihan Tertunda</p>
+            <h3 class="text-2xl font-bold text-on-background">8</h3>
+            <p class="text-xs text-error font-semibold flex items-center mt-1">
+              <span class="material-symbols-outlined text-xs mr-1"
+                >warning</span
+              >
+              Butuh follow-up
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-200 clinical-shadow flex items-start gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >favorite</span
+            >
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-medium">Kepuasan Pasien</p>
+            <h3 class="text-2xl font-bold text-on-background">98.4%</h3>
+            <p
+              class="text-xs text-tertiary font-semibold flex items-center mt-1"
+            >
+              <span class="material-symbols-outlined text-xs mr-1">star</span>
+              Rating Tertinggi
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          class="lg:col-span-2 bg-white rounded-xl border border-slate-200 clinical-shadow overflow-hidden"
+        >
+          <div
+            class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50"
+          >
+            <h3 class="font-h3 text-lg text-on-background">
+              Tren Kunjungan Pasien
+            </h3>
+            <select
+              class="bg-transparent border-none text-sm font-medium text-slate-500 focus:ring-0"
+            >
+              <option>7 Hari Terakhir</option>
+              <option>30 Hari Terakhir</option>
+            </select>
+          </div>
+          <div class="p-6 h-64 flex items-end justify-between gap-2">
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[40%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">SEN</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[65%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">SEL</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-primary rounded-t-md hover:bg-primary-container transition-all h-[95%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">RAB</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[55%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">KAM</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[80%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">JUM</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[30%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">SAB</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full group">
+              <div
+                class="w-full bg-blue-100 rounded-t-md hover:bg-primary-container transition-all h-[15%]"
+              ></div>
+              <span class="text-[10px] text-slate-400 font-bold">MIN</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-xl border border-slate-200 clinical-shadow overflow-hidden"
+        >
+          <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50">
+            <h3 class="font-h3 text-lg text-on-background">
+              Distribusi Pasien
+            </h3>
+          </div>
+          <div
+            class="p-6 flex flex-col items-center justify-center h-64 relative"
+          >
+            <div
+              class="w-40 h-40 rounded-full border-[12px] border-primary border-t-transparent border-l-secondary-container rotate-45 relative"
+            >
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center -rotate-45"
+              >
+                <span class="text-2xl font-bold text-on-background">1.2k</span>
+                <span class="text-[10px] text-slate-500 font-bold uppercase"
+                  >Umum</span
+                >
+              </div>
+            </div>
+            <div class="mt-6 flex gap-4 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span class="text-slate-600">Umum</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="w-2 h-2 rounded-full bg-secondary-container"
+                ></span>
+                <span class="text-slate-600">Asuransi</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+                <span class="text-slate-600">BPJS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-white rounded-xl border border-slate-200 clinical-shadow overflow-hidden"
+      >
+        <div
+          class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50"
+        >
+          <h3 class="font-h3 text-lg text-on-background">
+            Janji Temu Berikutnya
+          </h3>
+          <button class="text-primary text-sm font-bold hover:underline">
+            Lihat Semua
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr
+                class="bg-slate-50/50 text-slate-500 text-xs font-bold uppercase tracking-wider"
+              >
+                <th class="px-6 py-4">Pasien</th>
+                <th class="px-6 py-4">Dokter</th>
+                <th class="px-6 py-4">Waktu</th>
+                <th class="px-6 py-4">Keperluan</th>
+                <th class="px-6 py-4 text-center">Status</th>
+                <th class="px-6 py-4 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                    <img
+                      class="w-8 h-8 rounded-full object-cover"
+                      data-alt="portrait of a young woman with a gentle expression in a minimalist studio setting"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuElIdzi7_7fISDuCjIHgRWtjzCGKU3euFq6GXes1rAhXlq7okQwLxcM04E318KtU4dSfwb9wBWw0-GvjAHp1th9SIS6qdd6WeLOPxh6Q11DWwWSFPNrFnWyNsi5bVLlMZYp4f-4YD4y5yiS_-nUddhpwjEl6ws7p_1V-jmmr6WsYbMuArXYGyKzcidrQ226OUo2YleuG6rdgNKwkDfa81xMPF9dWI-RcJ5xdjk-ztg1vMkRrgDhxz9gWQEGog6GVP04SefCGeG5Yl"
+                    />
+                    <div>
+                      <p class="text-sm font-bold text-on-background">
+                        Siti Aminah
+                      </p>
+                      <p class="text-[11px] text-slate-500">ID: #PX-1029</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-sm font-medium text-slate-600">
+                  Dr. Handoko
+                </td>
+                <td class="px-6 py-4">
+                  <p class="text-sm font-bold text-on-background">09:30 WIB</p>
+                  <p class="text-[11px] text-slate-500">22 Okt 2023</p>
+                </td>
+                <td class="px-6 py-4 text-sm text-slate-600">Check-up Rutin</td>
+                <td class="px-6 py-4 text-center">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700"
+                  >
+                    Dikonfirmasi
+                  </span>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <button
+                    class="p-2 hover:bg-slate-100 rounded-lg text-slate-400"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >more_vert</span
+                    >
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                    <img
+                      class="w-8 h-8 rounded-full object-cover"
+                      data-alt="professional portrait of a middle-aged man in business attire with a warm and approachable smile"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrjkHehuaGu1Y6auJRzUSrot1bY9PeNAjkS39RF5dQmlP1ahoIu7-9cz_ByrA4BxcQoudqc541GRfOpE0QtEkDlO5yFPdl4K4UJiY7P2VPQz_3I58BUOuSxQoFSbxMsneZrSURvm3XVcB43lP6uyqWYvweKSmX61T9gPOdcjNRPTz5mpRB8NqAUSR7JL8IAnDhsWiVXgdq1ab2mUU6appzhCviwWx26oQhtGed2o4xkPHmMNUl3BvNWGikZHCgl8L1GMaQe7V9mMyH"
+                    />
+                    <div>
+                      <p class="text-sm font-bold text-on-background">
+                        Budi Santoso
+                      </p>
+                      <p class="text-[11px] text-slate-500">ID: #PX-1045</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-sm font-medium text-slate-600">
+                  Dr. Handoko
+                </td>
+                <td class="px-6 py-4">
+                  <p class="text-sm font-bold text-on-background">10:15 WIB</p>
+                  <p class="text-[11px] text-slate-500">22 Okt 2023</p>
+                </td>
+                <td class="px-6 py-4 text-sm text-slate-600">Keluhan Perut</td>
+                <td class="px-6 py-4 text-center">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-700"
+                  >
+                    Menunggu
+                  </span>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <button
+                    class="p-2 hover:bg-slate-100 rounded-lg text-slate-400"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >more_vert</span
+                    >
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-xs"
+                    >
+                      RK
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold text-on-background">
+                        Rina Kartika
+                      </p>
+                      <p class="text-[11px] text-slate-500">ID: #PX-1102</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-sm font-medium text-slate-600">
+                  Dr. Handoko
+                </td>
+                <td class="px-6 py-4">
+                  <p class="text-sm font-bold text-on-background">11:00 WIB</p>
+                  <p class="text-[11px] text-slate-500">22 Okt 2023</p>
+                </td>
+                <td class="px-6 py-4 text-sm text-slate-600">Konsultasi Lab</td>
+                <td class="px-6 py-4 text-center">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700"
+                  >
+                    Sedang Berjalan
+                  </span>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <button
+                    class="p-2 hover:bg-slate-100 rounded-lg text-slate-400"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >more_vert</span
+                    >
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                    <img
+                      class="w-8 h-8 rounded-full object-cover"
+                      data-alt="portrait of a cheerful young man with a friendly and open expression in a clean laboratory setting"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1vGqit-mxsH-8Pdzt1hAZETQef_enCnHbNkrR3OMiPmSwz0EjY5Bo4tXBsMLTtqzHRufVYGjXKIRMJ_N2ZebEAn7bAEMjNW9r13KaF9_O9DEYEvUgsQoY1uavqTEuIKfG2KnyyptVgRHvPBgSjXc0Yai2Q7UQis5gigoEm56qcyNcMT44gAEX4uQn1BYBqh6zO1ivCui0jbi6OpMUC734VLHqYN_umNPqnabL2AjGb7NBlZKIRhXBTj0fMVOWBC6_pIwW4VDabLpl"
+                    />
+                    <div>
+                      <p class="text-sm font-bold text-on-background">
+                        Agus Pratama
+                      </p>
+                      <p class="text-[11px] text-slate-500">ID: #PX-1088</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-sm font-medium text-slate-600">
+                  Dr. Handoko
+                </td>
+                <td class="px-6 py-4">
+                  <p class="text-sm font-bold text-on-background">13:30 WIB</p>
+                  <p class="text-[11px] text-slate-500">22 Okt 2023</p>
+                </td>
+                <td class="px-6 py-4 text-sm text-slate-600">Vaksinasi</td>
+                <td class="px-6 py-4 text-center">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600"
+                  >
+                    Belum Datang
+                  </span>
+                </td>
+                <td class="px-6 py-4 text-right">
+                  <button
+                    class="p-2 hover:bg-slate-100 rounded-lg text-slate-400"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >more_vert</span
+                    >
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="p-4 bg-slate-50/50 border-t border-slate-100 text-center">
+          <button
+            class="text-xs font-bold text-slate-500 hover:text-primary transition-colors flex items-center justify-center gap-1 mx-auto"
+          >
+            MUAT LEBIH BANYAK
+            <span class="material-symbols-outlined text-xs"
+              >keyboard_arrow_down</span
+            >
+          </button>
+        </div>
+      </section>
+    </main>
+    <div class="fixed bottom-8 right-8 z-50">
+      <button
+        type="button"
+        onclick="window.location.href = 'tambahpasien.html'"
+        class="bg-primary text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center group"
+      >
+        <span
+          class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform"
+          >add</span
+        >
+        <span
+          class="absolute right-16 bg-on-background text-white px-3 py-1.5 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap"
+        >
+          Tambah Pasien Baru
+        </span>
+      </button>
+    </div>
+  </body>
+</html>

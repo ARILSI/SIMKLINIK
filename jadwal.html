@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SIMKLINIK - Penjadwalan Medis</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#00419e",
+              "secondary-container": "#d0e1fb",
+              "tertiary-fixed-dim": "#4edea3",
+              outline: "#727787",
+              "on-tertiary-fixed": "#002113",
+              "on-secondary-fixed-variant": "#38485d",
+              "surface-dim": "#d8dadc",
+              secondary: "#505f76",
+              "primary-fixed-dim": "#b1c5ff",
+              "primary-fixed": "#dae2ff",
+              "on-primary-fixed": "#001946",
+              "inverse-surface": "#2d3133",
+              "tertiary-fixed": "#6ffbbe",
+              "outline-variant": "#c2c6d8",
+              "on-error": "#ffffff",
+              "on-background": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              background: "#f7f9fb",
+              "inverse-primary": "#b1c5ff",
+              "on-surface": "#191c1e",
+              "on-tertiary-container": "#000703",
+              "tertiary-container": "#00885d",
+              "inverse-on-surface": "#eff1f3",
+              "surface-bright": "#f7f9fb",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "primary-container": "#0d6efd",
+              tertiary: "#006c49",
+              "surface-variant": "#e0e3e5",
+              error: "#ba1a1a",
+              "on-surface-variant": "#424655",
+              "on-secondary-fixed": "#0b1c30",
+              surface: "#f7f9fb",
+              "surface-tint": "#0057ce",
+              "surface-container": "#eceef0",
+              "secondary-fixed-dim": "#b7c8e1",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#d3e4fe",
+              primary: "#0057cd",
+              "on-secondary-container": "#54647a",
+              "on-primary-container": "#ffffff",
+              "on-tertiary-fixed-variant": "#005236",
+              "on-secondary": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "1rem",
+              xs: "0.25rem",
+              xl: "2rem",
+              lg: "1.5rem",
+              base: "4px",
+              "container-max": "1440px",
+              gutter: "1.5rem",
+              sm: "0.5rem",
+            },
+            fontFamily: {
+              h3: ["Manrope"],
+              "body-lg": ["Inter"],
+              "label-caps": ["Inter"],
+              h2: ["Manrope"],
+              h1: ["Manrope"],
+              "body-sm": ["Inter"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              h3: ["1.5rem", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-lg": ["1.125rem", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-caps": [
+                "0.75rem",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              h2: ["2rem", { lineHeight: "1.3", fontWeight: "600" }],
+              h1: ["2.5rem", { lineHeight: "1.2", fontWeight: "700" }],
+              "body-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+              "body-md": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-background">
+    <!-- SideNavBar Container -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col h-screen py-6 z-50"
+    >
+      <div class="px-6 mb-8 flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center"
+        >
+          <span
+            class="material-symbols-outlined text-white"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >medical_services</span
+          >
+        </div>
+        <div>
+          <h1
+            class="text-lg font-bold text-slate-900 dark:text-white leading-tight"
+          >
+            SIMKLINIK
+          </h1>
+          <p
+            class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider"
+          >
+            Clinical Management System
+          </p>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 space-y-1">
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="font-manrope text-sm font-semibold">Dashboard</span>
+        </a>
+        <!-- Active State for Pasien -->
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="pasien.html"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >person</span
+          >
+          <span class="font-manrope text-sm font-semibold">Pasien</span>
+        </a>
+        <a
+          class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-r-4 border-blue-600 px-4 py-3 flex items-center gap-3 transition-all rounded-r-none rounded-lg duration-200 ease-in-out"
+          href="jadwal.html"
+        >
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span class="font-manrope text-sm font-semibold">Jadwal</span>
+        </a>
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="medis.html"
+        >
+          <span class="material-symbols-outlined">medical_services</span>
+          <span class="font-manrope text-sm font-semibold">Medis</span>
+        </a>
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="tagihan.html"
+        >
+          <span class="material-symbols-outlined">receipt_long</span>
+          <span class="font-manrope text-sm font-semibold">Tagihan</span>
+        </a>
+      </nav>
+      <div class="px-4 mt-auto">
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-red-50 dark:hover:bg-red-900/10 hover:text-red-600 transition-all rounded-lg duration-200 ease-in-out"
+          href="index.html"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          <span class="font-manrope text-sm font-semibold">Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 min-h-screen">
+      <!-- TopAppBar -->
+      <header
+        class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-40 bg-slate-50/80 backdrop-blur-md border-b border-slate-200 shadow-sm"
+      >
+        <div class="flex items-center gap-4">
+          <h2 class="font-h2 text-xl text-on-surface">Penjadwalan Medis</h2>
+          <div
+            class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold"
+          >
+            Senin, 24 Mei 2024
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium hover:bg-white transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm">print</span>
+            Print Jadwal
+          </button>
+          <a
+            href="tambahjanjitamu.html"
+            class="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-[20px]">add</span>
+            Janji Temu Baru
+          </a>
+          <div class="h-8 w-px bg-slate-300 mx-2"></div>
+          <div class="flex items-center gap-3 cursor-pointer">
+            <img
+              alt="Dr. Aris Setiawan"
+              class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover"
+              data-alt="professional portrait of a male doctor in clinical white coat with a friendly smile, medical center background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4sAlAUB5C0mzJgfTvqywvPDGU1QcJjJTIhTCkrukvJ0kXSb9FB6wLGHfjgg42IYQjbBhHT8hwaeLilbr5dLu-7WI3WTVGpfMw_QZpC54J_iS0ntxuV6YNy90LWS8zFBkw-Wr8KxkKju0jbNO8yh5p4ZH5MV_i5nkdIksch2NGeGBHeSemLjkdm-MJZfoR3ffB3MpXStPUh0jdDxNtSPYCHGL97ttkKZTVcWOHnPuVzDFlVidAEtvzaSBvYFyck2hf13k3ePmp34tH"
+            />
+            <div class="hidden lg:block text-left">
+              <p class="text-xs font-bold text-on-surface leading-none">
+                Dr. Aris Setiawan
+              </p>
+              <p class="text-[10px] text-slate-500 uppercase tracking-tighter">
+                Kepala Klinik
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="p-8 grid grid-cols-12 gap-8">
+        <!-- Left Sidebar Filter & Summary -->
+        <div class="col-span-12 lg:col-span-3 space-y-6">
+          <!-- Filter Section -->
+          <div
+            class="bg-surface-container-lowest border border-slate-200 rounded-xl p-6 shadow-sm"
+          >
+            <h3 class="font-h3 text-base mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-600"
+                >filter_alt</span
+              >
+              Filter Jadwal
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <label class="font-label-caps text-slate-500 mb-1.5 block"
+                  >PILIH POLI</label
+                >
+                <select
+                  class="w-full rounded-lg border-slate-200 text-sm focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>Poli Umum</option>
+                  <option>Poli Gigi</option>
+                  <option>Poli Anak</option>
+                  <option>Poli Kandungan</option>
+                </select>
+              </div>
+              <div>
+                <label class="font-label-caps text-slate-500 mb-1.5 block"
+                  >PILIH DOKTER</label
+                >
+                <select
+                  class="w-full rounded-lg border-slate-200 text-sm focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>Semua Dokter</option>
+                  <option>Dr. Siti Aminah</option>
+                  <option>Dr. Budi Santoso</option>
+                  <option>Dr. Diana Putri</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Daily Summary Stats -->
+          <div
+            class="bg-surface-container-lowest border border-slate-200 rounded-xl p-6 shadow-sm overflow-hidden relative"
+          >
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+              <span class="material-symbols-outlined text-6xl">monitoring</span>
+            </div>
+            <h3 class="font-h3 text-base mb-6">Ringkasan Hari Ini</h3>
+            <div class="space-y-5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600"
+                  >
+                    <span class="material-symbols-outlined">groups</span>
+                  </div>
+                  <span class="text-sm font-medium text-slate-600"
+                    >Total Pasien</span
+                  >
+                </div>
+                <span class="text-lg font-bold">48</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"
+                  >
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <span class="text-sm font-medium text-slate-600"
+                    >Selesai</span
+                  >
+                </div>
+                <span class="text-lg font-bold text-emerald-600">32</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600"
+                  >
+                    <span class="material-symbols-outlined"
+                      >pending_actions</span
+                    >
+                  </div>
+                  <span class="text-sm font-medium text-slate-600"
+                    >Menunggu</span
+                  >
+                </div>
+                <span class="text-lg font-bold text-amber-600">16</span>
+              </div>
+            </div>
+            <div
+              class="mt-8 p-4 bg-slate-50 rounded-lg border border-slate-100"
+            >
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-semibold text-slate-500"
+                  >Kapasitas Poli</span
+                >
+                <span class="text-xs font-bold text-blue-600">75%</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-1.5">
+                <div
+                  class="bg-blue-600 h-1.5 rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Main Calendar View -->
+        <div class="col-span-12 lg:col-span-9 space-y-8">
+          <!-- Weekly Calendar -->
+          <div
+            class="bg-surface-container-lowest border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col"
+          >
+            <div
+              class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <button
+                  class="p-1 hover:bg-white rounded-md border border-slate-200 transition-colors"
+                >
+                  <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <h4 class="font-h3 text-lg">Mei 20 - 26, 2024</h4>
+                <button
+                  class="p-1 hover:bg-white rounded-md border border-slate-200 transition-colors"
+                >
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+              </div>
+              <div class="flex bg-white rounded-lg p-1 border border-slate-200">
+                <button
+                  class="px-4 py-1 text-xs font-semibold bg-blue-600 text-white rounded-md"
+                >
+                  Mingguan
+                </button>
+                <button
+                  class="px-4 py-1 text-xs font-semibold text-slate-500 hover:text-blue-600"
+                >
+                  Harian
+                </button>
+              </div>
+            </div>
+            <div class="overflow-x-auto custom-scrollbar">
+              <div class="min-w-[800px]">
+                <!-- Calendar Header -->
+                <div
+                  class="calendar-grid border-b border-slate-100 bg-slate-50/50"
+                >
+                  <div class="p-4"></div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    >
+                      Sen
+                    </p>
+                    <p class="text-xl font-bold text-blue-600">20</p>
+                  </div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    >
+                      Sel
+                    </p>
+                    <p class="text-xl font-bold text-slate-700">21</p>
+                  </div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    >
+                      Rab
+                    </p>
+                    <p class="text-xl font-bold text-slate-700">22</p>
+                  </div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    >
+                      Kam
+                    </p>
+                    <p class="text-xl font-bold text-slate-700">23</p>
+                  </div>
+                  <div
+                    class="p-4 text-center border-l border-slate-100 bg-blue-50/30"
+                  >
+                    <p
+                      class="text-[10px] font-bold text-blue-600 uppercase tracking-widest"
+                    >
+                      Jum
+                    </p>
+                    <p
+                      class="text-xl font-bold text-blue-700 underline decoration-2 underline-offset-4"
+                    >
+                      24
+                    </p>
+                  </div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    >
+                      Sab
+                    </p>
+                    <p class="text-xl font-bold text-slate-700">25</p>
+                  </div>
+                  <div class="p-4 text-center border-l border-slate-100">
+                    <p
+                      class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-red-400"
+                    >
+                      Min
+                    </p>
+                    <p class="text-xl font-bold text-red-500">26</p>
+                  </div>
+                </div>
+                <!-- Calendar Body (Slots) -->
+                <div class="calendar-grid h-[400px]">
+                  <!-- Time Column -->
+                  <div class="flex flex-col border-r border-slate-100">
+                    <div
+                      class="h-20 p-2 text-[10px] font-bold text-slate-400 text-right"
+                    >
+                      08:00
+                    </div>
+                    <div
+                      class="h-20 p-2 text-[10px] font-bold text-slate-400 text-right"
+                    >
+                      09:00
+                    </div>
+                    <div
+                      class="h-20 p-2 text-[10px] font-bold text-slate-400 text-right"
+                    >
+                      10:00
+                    </div>
+                    <div
+                      class="h-20 p-2 text-[10px] font-bold text-slate-400 text-right"
+                    >
+                      11:00
+                    </div>
+                    <div
+                      class="h-20 p-2 text-[10px] font-bold text-slate-400 text-right"
+                    >
+                      12:00
+                    </div>
+                  </div>
+                  <!-- Monday -->
+                  <div
+                    class="border-r border-slate-100 relative group hover:bg-slate-50/50 transition-colors"
+                  >
+                    <div
+                      class="absolute top-2 left-1 right-1 h-14 bg-blue-100 border-l-4 border-blue-600 rounded p-1.5 shadow-sm"
+                    >
+                      <p class="text-[10px] font-bold text-blue-900 truncate">
+                        Ani Wijaya
+                      </p>
+                      <p class="text-[8px] text-blue-700">08:15 - Umum</p>
+                    </div>
+                  </div>
+                  <!-- Tuesday -->
+                  <div
+                    class="border-r border-slate-100 relative group hover:bg-slate-50/50 transition-colors"
+                  >
+                    <div
+                      class="absolute top-24 left-1 right-1 h-14 bg-emerald-100 border-l-4 border-emerald-600 rounded p-1.5 shadow-sm"
+                    >
+                      <p
+                        class="text-[10px] font-bold text-emerald-900 truncate"
+                      >
+                        Bambang H.
+                      </p>
+                      <p class="text-[8px] text-emerald-700">09:30 - Gigi</p>
+                    </div>
+                  </div>
+                  <!-- Wednesday -->
+                  <div
+                    class="border-r border-slate-100 relative group hover:bg-slate-50/50 transition-colors"
+                  ></div>
+                  <!-- Thursday -->
+                  <div
+                    class="border-r border-slate-100 relative group hover:bg-slate-50/50 transition-colors"
+                  >
+                    <div
+                      class="absolute top-12 left-1 right-1 h-24 bg-purple-100 border-l-4 border-purple-600 rounded p-1.5 shadow-sm"
+                    >
+                      <p class="text-[10px] font-bold text-purple-900 truncate">
+                        Cyntia Rose
+                      </p>
+                      <p class="text-[8px] text-purple-700">08:45 - Anak</p>
+                    </div>
+                  </div>
+                  <!-- Friday (Today) -->
+                  <div
+                    class="border-r border-slate-100 bg-blue-50/10 relative group"
+                  >
+                    <div
+                      class="absolute top-4 left-1 right-1 h-14 bg-blue-600 text-white rounded p-1.5 shadow-md"
+                    >
+                      <p class="text-[10px] font-bold truncate">Dodi Permana</p>
+                      <p class="text-[8px] opacity-80">08:30 - Jantung</p>
+                    </div>
+                    <div
+                      class="absolute top-36 left-1 right-1 h-14 bg-amber-100 border-l-4 border-amber-600 rounded p-1.5 shadow-sm"
+                    >
+                      <p class="text-[10px] font-bold text-amber-900 truncate">
+                        Eka Sari
+                      </p>
+                      <p class="text-[8px] text-amber-700">10:15 - Kandungan</p>
+                    </div>
+                  </div>
+                  <!-- Saturday -->
+                  <div
+                    class="border-r border-slate-100 relative group hover:bg-slate-50/50 transition-colors"
+                  ></div>
+                  <!-- Sunday -->
+                  <div class="relative bg-slate-50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Today's Appointments List -->
+          <div
+            class="bg-surface-container-lowest border border-slate-200 rounded-xl shadow-sm overflow-hidden"
+          >
+            <div
+              class="p-6 border-b border-slate-100 flex justify-between items-center"
+            >
+              <h3 class="font-h3 text-lg">JANJI TEMU HARI INI</h3>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+                  >search</span
+                >
+                <input
+                  class="pl-9 pr-4 py-1.5 rounded-lg border-slate-200 text-sm focus:ring-blue-500 focus:border-blue-500 bg-slate-50"
+                  placeholder="Cari Pasien..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="bg-slate-50 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100"
+                  >
+                    <th class="px-6 py-4">Pasien</th>
+                    <th class="px-6 py-4">Waktu</th>
+                    <th class="px-6 py-4">Dokter</th>
+                    <th class="px-6 py-4">Layanan</th>
+                    <th class="px-6 py-4">Status</th>
+                    <th class="px-6 py-4 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-50">
+                  <!-- Row 1 -->
+                  <tr class="hover:bg-slate-50 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs"
+                        >
+                          DP
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-800">
+                            Dodi Permana
+                          </p>
+                          <p class="text-[10px] text-slate-500">ID: #PX-9921</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-slate-700">
+                      08:30 WIB
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-sm text-slate-400"
+                          >medical_services</span
+                        >
+                        <span class="text-sm text-slate-700"
+                          >Dr. Aris Setiawan</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-600">
+                      Spesialis Jantung
+                    </td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"
+                        >Selesai</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="p-1 text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <span class="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr class="hover:bg-slate-50 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-xs"
+                        >
+                          ES
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-800">
+                            Eka Sari
+                          </p>
+                          <p class="text-[10px] text-slate-500">ID: #PX-9844</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-slate-700">
+                      10:15 WIB
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-sm text-slate-400"
+                          >medical_services</span
+                        >
+                        <span class="text-sm text-slate-700"
+                          >Dr. Siti Aminah</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-600">
+                      Poli Kandungan
+                    </td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-100"
+                        >Menunggu</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="p-1 text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <span class="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr class="hover:bg-slate-50 transition-colors group">
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-xs"
+                        >
+                          FM
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-800">
+                            Farhan Maulana
+                          </p>
+                          <p class="text-[10px] text-slate-500">ID: #PX-9762</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm font-medium text-slate-700">
+                      13:00 WIB
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-sm text-slate-400"
+                          >medical_services</span
+                        >
+                        <span class="text-sm text-slate-700"
+                          >Dr. Budi Santoso</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-600">Poli Umum</td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100"
+                        >Terjadwal</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <button
+                        class="p-1 text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <span class="material-symbols-outlined">more_vert</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="p-4 border-t border-slate-100 bg-slate-50/30 flex justify-between items-center"
+            >
+              <p class="text-xs text-slate-500">
+                Menampilkan 3 dari 48 pasien hari ini
+              </p>
+              <div class="flex gap-2">
+                <button
+                  class="px-3 py-1 text-xs border border-slate-200 rounded hover:bg-white transition-colors disabled:opacity-50"
+                  disabled=""
+                >
+                  Sebelumnya
+                </button>
+                <button
+                  class="px-3 py-1 text-xs border border-slate-200 rounded hover:bg-white transition-colors"
+                >
+                  Berikutnya
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Contextual FAB - Suppression Logic: Only on Home/Dash. 
+         Following instructions, we render it only if the purpose aligns.
+         Since this is 'Schedule', adding a 'New Appointment' FAB as a secondary action. -->
+    <button
+      class="fixed bottom-8 right-8 w-14 h-14 bg-primary-container text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform active:opacity-90 md:hidden"
+    >
+      <span class="material-symbols-outlined">add</span>
+    </button>
+  </body>
+</html>

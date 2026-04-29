@@ -1,0 +1,379 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Pengaturan Sistem - SIMKLINIK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "secondary": "#505f76",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#00419e",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary-container": "#00885d",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed": "#001946",
+                    "tertiary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dae2ff",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-container": "#ffffff",
+                    "background": "#f7f9fb",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary-container": "#54647a",
+                    "tertiary": "#006c49",
+                    "on-background": "#191c1e",
+                    "surface": "#f7f9fb",
+                    "primary-container": "#0d6efd",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary": "#0057cd",
+                    "inverse-surface": "#2d3133",
+                    "outline": "#727787",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c2c6d8",
+                    "on-surface-variant": "#424655",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-tertiary-container": "#000703",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-tint": "#0057ce",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "secondary-fixed": "#d3e4fe",
+                    "inverse-primary": "#b1c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "1rem",
+                    "lg": "1.5rem",
+                    "xs": "0.25rem",
+                    "gutter": "1.5rem",
+                    "xl": "2rem",
+                    "base": "4px",
+                    "sm": "0.5rem",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h3": ["Manrope"],
+                    "body-md": ["Inter"],
+                    "h1": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["2rem", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["0.75rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1": ["2.5rem", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+ <body class="font-body-md text-on-background antialiased">
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex flex-col z-50 overflow-y-auto"
+    >
+      <div class="px-6 py-8">
+        <div class="flex items-center gap-3 mb-8">
+          <div
+            class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-sm"
+          >
+            <span
+              class="material-symbols-outlined text-white"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >medical_services</span
+            >
+          </div>
+          <div>
+            <h1 class="text-lg font-black text-blue-700 tracking-tight">
+              SIMKLINIK
+            </h1>
+            <p
+              class="text-[10px] uppercase tracking-widest text-slate-500 font-bold"
+            >
+              Clinical Management System
+            </p>
+          </div>
+        </div>
+        <nav class="space-y-1">
+          <a
+           class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="dashboard.html"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-manrope text-sm tracking-wide">Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="pasien.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-manrope text-sm tracking-wide">Pasien</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="jadwal.html"
+          >
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span class="font-manrope text-sm tracking-wide">Jadwal</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="medis.html"
+          >
+            <span class="material-symbols-outlined">medical_services</span>
+            <span class="font-manrope text-sm tracking-wide">Medis</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-all rounded-lg"
+            href="tagihan.html"
+          >
+            <span class="material-symbols-outlined">receipt_long</span>
+            <span class="font-manrope text-sm tracking-wide">Tagihan</span>
+          </a>
+          <a
+           class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-700 border-r-4 border-blue-600 font-bold rounded-l-lg"
+            href="pengaturan.html"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-manrope text-sm tracking-wide">Pengaturan</span>
+          </a>
+        </nav>
+      </div>
+      <div class="mt-auto p-6 border-t border-slate-200">
+        <button
+          type="button"
+          onclick="window.location.href = 'index.html'"
+          class="flex items-center gap-3 px-4 py-3 w-full text-slate-600 hover:bg-error-container hover:text-error transition-all rounded-lg"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          <span class="font-manrope text-sm tracking-wide">Logout</span>
+        </button>
+      </div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-[1024px]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+<!-- TopNavBar Integration -->
+<header class="flex justify-between items-center h-16 px-6 w-full sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm font-manrope text-sm font-medium">
+<div class="flex items-center bg-slate-100 px-3 py-1.5 rounded-full w-96">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full p-0" placeholder="Cari data pasien atau jadwal..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-bold text-slate-900 leading-tight">Dr. Aris Setiawan</p>
+<p class="text-xs text-slate-500">Administrator</p>
+</div>
+<img alt="Profil Dokter" class="w-10 h-10 rounded-full object-cover border-2 border-blue-100" data-alt="Professional portrait of a male doctor in clinical attire, soft studio lighting, clean medical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4UbN7wwChNHfYgkLF3OLutqkJ-52oHiFnu_aswGin4tEeclz2WqVFKHwyLEGkPCFYc9a-SJzBgc3Wq1i6nfo3fLYJRRWL6jdZ-C7t0sXkxcKYOy0r6KF5eGLznFZj5-0IxksHF7xOBDHw2PPC7uB5EGTn7GC4NrMhK-K7hkf4z9dPyaLXuUBE9gsueynkyITPbr_34-GYh_XTdfUEEZgn6hb0RnKyYMtGrhgrRgflgnuu8SRTrrhJ8CnSDbABn55yH8R2UD2JxRpS">
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-6xl mx-auto">
+<!-- Page Header -->
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-slate-900 mb-2">Pengaturan Sistem</h2>
+<p class="text-secondary font-body-md">Kelola profil, keamanan, dan preferensi aplikasi Anda.</p>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex gap-8 border-b border-outline-variant mb-8">
+<button class="pb-4 text-primary border-b-2 border-primary font-semibold text-sm">Profil Saya</button>
+<button class="pb-4 text-secondary hover:text-primary transition-colors font-medium text-sm">Keamanan</button>
+<button class="pb-4 text-secondary hover:text-primary transition-colors font-medium text-sm">Notifikasi</button>
+<button class="pb-4 text-secondary hover:text-primary transition-colors font-medium text-sm">Preferensi Sistem</button>
+</div>
+<!-- Settings Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Profile Section (Left Column) -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Profile Card -->
+<section class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="bg-slate-50 px-6 py-4 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h3 text-lg font-bold text-slate-900">Informasi Dasar</h3>
+<span class="material-symbols-outlined text-slate-400">badge</span>
+</div>
+<div class="p-8">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="relative group">
+<img alt="Foto Profil" class="w-32 h-32 rounded-2xl object-cover ring-4 ring-blue-50" data-alt="Close-up professional portrait of a doctor for a profile page, bright clinical lighting, neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDojQIhbt_LacYaUC9fVyp36WmkiUrnsQe3HXCQqd2aI-73WrFaNqyGqnzsG1hg_h4rrEdNZTOqDhUr7NDsuatNdw7UXSgOHbpatLnHBDml6uE6xxAbuVPREyQKwao2Thwvtftz4uz7H0DvERWztb3JLnu_R8xmMnNbxaIQRQU_udx_o8nqgKLy0GixXKyHTPpqAPceuOP6VAEqG2uGWWQtjWiJrAxbnYaKfBoCZUqDLlH3QwSMrrTj59HGU6wqRPKY1naWpJMK4L_9">
+<button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">NAMA LENGKAP</label>
+<input class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5" type="text" value="Dr. Aris Setiawan">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">NIP / ID DOKTER</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-container-low px-4 py-2.5 text-slate-500 cursor-not-allowed" readonly="" type="text" value="19850412 201012 1 001">
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">SPESIALISASI</label>
+<select class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5">
+<option>Dokter Umum</option>
+<option selected="">Spesialis Penyakit Dalam</option>
+<option>Spesialis Anak</option>
+<option>Spesialis Bedah</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">NOMOR TELEPON</label>
+<input class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5" type="tel" value="+62 812-3456-7890">
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-caps text-xs text-secondary">EMAIL AKTIF</label>
+<input class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5" type="email" value="aris.setiawan@simklinik.com">
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-caps text-xs text-secondary">BIO SINGKAT</label>
+<textarea class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5" rows="3">Berpengalaman lebih dari 12 tahun di bidang penyakit dalam, fokus pada perawatan holistik dan manajemen penyakit kronis.</textarea>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="bg-slate-50 px-6 py-4 border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h3 text-lg font-bold text-slate-900">Keamanan &amp; Akses</h3>
+<span class="material-symbols-outlined text-slate-400">security</span>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined">key</span>
+</div>
+<div>
+<p class="font-bold text-slate-900">Kata Sandi</p>
+<p class="text-xs text-secondary">Terakhir diubah 3 bulan yang lalu</p>
+</div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Ganti Password</button>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="font-bold text-slate-900">Verifikasi Dua Langkah (2FA)</p>
+<p class="text-xs text-secondary">Tambahkan lapisan keamanan ekstra untuk akun Anda</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Preferences & Status (Right Column) -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Preferences Card -->
+<section class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="bg-slate-50 px-6 py-4 border-b border-outline-variant">
+<h3 class="font-h3 text-lg font-bold text-slate-900">Preferensi</h3>
+</div>
+<div class="p-6 space-y-6">
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">BAHASA APLIKASI</label>
+<select class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary px-4 py-2.5">
+<option selected="">Bahasa Indonesia</option>
+<option>English (US)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-secondary">TEMA VISUAL</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-primary bg-blue-50 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm">light_mode</span> Terang
+                                    </button>
+<button class="flex items-center justify-center gap-2 py-3 rounded-lg border border-outline-variant text-slate-600 font-medium text-sm hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">dark_mode</span> Gelap
+                                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Login History Card -->
+<section class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="bg-slate-50 px-6 py-4 border-b border-outline-variant">
+<h3 class="font-h3 text-lg font-bold text-slate-900">Riwayat Login</h3>
+</div>
+<div class="p-0">
+<div class="p-4 border-b border-slate-100 flex gap-3">
+<span class="material-symbols-outlined text-slate-400 mt-1">laptop</span>
+<div>
+<p class="text-sm font-bold text-slate-900">Chrome di Windows 11</p>
+<p class="text-xs text-secondary">Jakarta, ID • Sedang Aktif</p>
+</div>
+</div>
+<div class="p-4 flex gap-3">
+<span class="material-symbols-outlined text-slate-400 mt-1">smartphone</span>
+<div>
+<p class="text-sm font-bold text-slate-900">iPhone 13 - Safari</p>
+<p class="text-xs text-secondary">2 jam yang lalu</p>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 p-3 text-center">
+<button class="text-xs text-primary font-bold hover:underline">Lihat Semua Riwayat</button>
+</div>
+</section>
+<!-- Danger Zone -->
+<div class="pt-4">
+<button class="w-full group flex items-center justify-center gap-3 py-4 rounded-xl border-2 border-red-100 text-red-600 font-bold hover:bg-red-50 transition-all">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">logout</span>
+                            Keluar Sesi Sekarang
+                        </button>
+</div>
+</div>
+</div>
+<!-- Global Actions -->
+<div class="mt-12 flex items-center justify-end gap-4 pb-12">
+<button class="px-8 py-3 rounded-lg text-slate-600 font-bold hover:bg-slate-100 transition-colors">Batalkan Perubahan</button>
+<button class="px-8 py-3 rounded-lg bg-primary text-white font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-95 transition-all">Simpan Perubahan</button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,609 @@
+<!doctype html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d8dadc",
+              "inverse-primary": "#b1c5ff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "surface-variant": "#e0e3e5",
+              "tertiary-container": "#00885d",
+              "secondary-container": "#d0e1fb",
+              primary: "#0057cd",
+              "on-surface-variant": "#424655",
+              "inverse-on-surface": "#eff1f3",
+              secondary: "#505f76",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#0057ce",
+              "surface-container-highest": "#e0e3e5",
+              "on-tertiary-fixed": "#002113",
+              "on-secondary-fixed-variant": "#38485d",
+              "inverse-surface": "#2d3133",
+              "primary-fixed": "#dae2ff",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1e",
+              "on-primary-fixed": "#001946",
+              "secondary-fixed": "#d3e4fe",
+              "primary-fixed-dim": "#b1c5ff",
+              "on-secondary-fixed": "#0b1c30",
+              "secondary-fixed-dim": "#b7c8e1",
+              "on-tertiary-container": "#000703",
+              "surface-container-high": "#e6e8ea",
+              "outline-variant": "#c2c6d8",
+              outline: "#727787",
+              "on-secondary-container": "#54647a",
+              background: "#f7f9fb",
+              "tertiary-fixed": "#6ffbbe",
+              surface: "#f7f9fb",
+              "primary-container": "#0d6efd",
+              "on-primary-fixed-variant": "#00419e",
+              tertiary: "#006c49",
+              "surface-container": "#eceef0",
+              "on-background": "#191c1e",
+              "tertiary-fixed-dim": "#4edea3",
+              error: "#ba1a1a",
+              "on-tertiary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xs: "0.25rem",
+              md: "1rem",
+              xl: "2rem",
+              sm: "0.5rem",
+              gutter: "1.5rem",
+              base: "4px",
+              lg: "1.5rem",
+              "container-max": "1440px",
+            },
+            fontFamily: {
+              h3: ["Manrope"],
+              "body-md": ["Inter"],
+              h1: ["Manrope"],
+              "body-lg": ["Inter"],
+              "label-caps": ["Inter"],
+              h2: ["Manrope"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              h3: ["1.5rem", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-md": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
+              h1: ["2.5rem", { lineHeight: "1.2", fontWeight: "700" }],
+              "body-lg": ["1.125rem", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-caps": [
+                "0.75rem",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              h2: ["2rem", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-background">
+    <!-- SideNavBar Container -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 border-r border-slate-200 bg-slate-50 dark:bg-slate-950 flex flex-col h-screen py-6 z-50"
+    >
+      <div class="px-6 mb-8 flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center"
+        >
+          <span
+            class="material-symbols-outlined text-white"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >medical_services</span
+          >
+        </div>
+        <div>
+          <h1
+            class="text-lg font-bold text-slate-900 dark:text-white leading-tight"
+          >
+            SIMKLINIK
+          </h1>
+          <p
+            class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider"
+          >
+            Clinical Management System
+          </p>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 space-y-1">
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="font-manrope text-sm font-semibold">Dashboard</span>
+        </a>
+        <!-- Active State for Pasien -->
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="pasien.html"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >person</span
+          >
+          <span class="font-manrope text-sm font-semibold">Pasien</span>
+        </a>
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="jadwal.html"
+        >
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span class="font-manrope text-sm font-semibold">Jadwal</span>
+        </a>
+        <a
+          class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-r-4 border-blue-600 px-4 py-3 flex items-center gap-3 transition-all rounded-r-none rounded-lg duration-200 ease-in-out"
+          href="medis.html"
+        >
+          <span class="material-symbols-outlined">medical_services</span>
+          <span class="font-manrope text-sm font-semibold">Medis</span>
+        </a>
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg duration-200 ease-in-out"
+          href="tagihan.html"
+        >
+          <span class="material-symbols-outlined">receipt_long</span>
+          <span class="font-manrope text-sm font-semibold">Tagihan</span>
+        </a>
+      </nav>
+      <div class="px-4 mt-auto">
+        <a
+          class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-red-50 dark:hover:bg-red-900/10 hover:text-red-600 transition-all rounded-lg duration-200 ease-in-out"
+          href="index.html"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          <span class="font-manrope text-sm font-semibold">Logout</span>
+        </a>
+      </div>
+    </aside>
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 right-0 left-64 h-16 border-b border-slate-100 bg-white/80 backdrop-blur-md z-40 flex justify-between items-center px-8"
+    >
+      <div class="flex items-center flex-1">
+        <div class="relative w-96">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+            >search</span
+          >
+          <input
+            class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all"
+            placeholder="Cari data pasien, resep, atau riwayat..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors relative"
+        >
+          <span class="material-symbols-outlined" data-icon="notifications"
+            >notifications</span
+          >
+          <span
+            class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"
+          ></span>
+        </button>
+        <button
+          class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+        </button>
+        <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+        <span class="font-manrope text-sm font-semibold text-slate-700"
+          >Dr. Smith</span
+        >
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="ml-64 pt-16 min-h-screen">
+      <div class="p-8 max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="mb-8">
+          <nav class="flex text-xs font-medium text-slate-400 gap-2 mb-2">
+            <span>Dashboard</span>
+            <span class="material-symbols-outlined text-[12px]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Konsultasi Aktif</span>
+          </nav>
+          <div class="flex items-center justify-between">
+            <h2 class="font-h2 text-h2 text-slate-900">Portal Medis</h2>
+            <div class="flex items-center gap-3">
+              <span
+                class="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold ring-1 ring-emerald-200"
+              >
+                <span
+                  class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                ></span>
+                Sesi Aktif
+              </span>
+              <span class="text-sm text-slate-400 font-medium italic"
+                >Waktu Konsultasi: 12:45</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-8">
+          <!-- Left Column (30%) - Patient Profile -->
+          <aside class="w-[30%] space-y-6">
+            <div
+              class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm"
+            >
+              <div
+                class="p-6 text-center border-b border-slate-50 bg-gradient-to-b from-slate-50 to-white"
+              >
+                <div class="relative inline-block mb-4">
+                  <img
+                    alt="Patient Photo"
+                    class="w-24 h-24 rounded-2xl object-cover ring-4 ring-white shadow-lg mx-auto"
+                    data-alt="portrait of a middle-aged Indonesian man with a kind expression, clean background, bright studio lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8SNMq7ItVuV92y_KksD1eb73boKmO8KZ4U-v2rdX96c17DByBrTsciIVQl2o9EWbz_qmVR-oL2UzqAlW9aUU4gy10BzrjMh03wXzY1Bl3B-YS8kHpRejnbes5W04hGbTAdOcNf5BW1t9-QziyMe1Q0mr6-lgQubD4S_luf6Mx8-kv1g854VcACtT_OFqW1ALJecg2XRrYnMCkxCIZbYXsphTxDu8c2gze7WmZOWT424eO2Dcws7yJmk4FtBW4d7uCy0Aa3rBKvNU_"
+                  />
+                  <span
+                    class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-4 border-white rounded-full"
+                  ></span>
+                </div>
+                <h3 class="font-h3 text-h3 text-slate-800">Budi Santoso</h3>
+                <p class="text-sm text-slate-500 font-medium">
+                  Pasien Reguler • 45 Tahun
+                </p>
+                <div
+                  class="mt-4 inline-block px-3 py-1 bg-slate-100 rounded-lg text-xs font-mono text-slate-600"
+                >
+                  ID: PX-2023-0881
+                </div>
+              </div>
+              <div class="p-6 space-y-6">
+                <!-- Vital Signs Grid -->
+                <div>
+                  <h4
+                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4"
+                  >
+                    Vital Signs
+                  </h4>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div
+                      class="p-3 bg-blue-50/50 rounded-lg border border-blue-100"
+                    >
+                      <p class="text-[10px] text-blue-600 font-bold uppercase">
+                        Tekanan Darah
+                      </p>
+                      <p class="text-lg font-bold text-slate-800">
+                        120/80
+                        <span class="text-xs font-normal text-slate-500"
+                          >mmHg</span
+                        >
+                      </p>
+                    </div>
+                    <div
+                      class="p-3 bg-orange-50/50 rounded-lg border border-orange-100"
+                    >
+                      <p
+                        class="text-[10px] text-orange-600 font-bold uppercase"
+                      >
+                        Suhu
+                      </p>
+                      <p class="text-lg font-bold text-slate-800">
+                        36.5
+                        <span class="text-xs font-normal text-slate-500"
+                          >°C</span
+                        >
+                      </p>
+                    </div>
+                    <div
+                      class="p-3 bg-teal-50/50 rounded-lg border border-teal-100"
+                    >
+                      <p class="text-[10px] text-teal-600 font-bold uppercase">
+                        Berat Badan
+                      </p>
+                      <p class="text-lg font-bold text-slate-800">
+                        72
+                        <span class="text-xs font-normal text-slate-500"
+                          >kg</span
+                        >
+                      </p>
+                    </div>
+                    <div
+                      class="p-3 bg-purple-50/50 rounded-lg border border-purple-100"
+                    >
+                      <p
+                        class="text-[10px] text-purple-600 font-bold uppercase"
+                      >
+                        Tinggi
+                      </p>
+                      <p class="text-lg font-bold text-slate-800">
+                        170
+                        <span class="text-xs font-normal text-slate-500"
+                          >cm</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Allergies -->
+                <div class="pt-4 border-t border-slate-100">
+                  <h4
+                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3"
+                  >
+                    Alergi
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1.5 bg-red-100 text-red-700 rounded-lg text-xs font-bold flex items-center gap-1.5"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >warning</span
+                      >
+                      Amoxicillin
+                    </span>
+                    <span
+                      class="px-3 py-1.5 bg-red-100 text-red-700 rounded-lg text-xs font-bold flex items-center gap-1.5"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >warning</span
+                      >
+                      Kacang-kacangan
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-blue-600 rounded-xl p-6 text-white shadow-md relative overflow-hidden"
+            >
+              <div class="relative z-10">
+                <h4 class="font-bold mb-2">Riwayat Medis Terakhir</h4>
+                <p class="text-xs text-blue-100 mb-4">Kunjungan: 12 Jan 2024</p>
+                <p class="text-sm font-medium line-clamp-2">
+                  "Pasien mengeluh pusing dan mual setelah makan makanan
+                  berlemak..."
+                </p>
+                <button
+                  class="mt-4 text-xs font-bold underline underline-offset-4"
+                >
+                  Lihat Detail Riwayat
+                </button>
+              </div>
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-white/10 rotate-12"
+                >history</span
+              >
+            </div>
+          </aside>
+          <!-- Right Column (70%) - Medical Input -->
+          <section class="w-[70%] space-y-6">
+            <!-- Section Diagnosis -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div
+                class="p-5 border-b border-slate-100 flex items-center gap-3"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >edit_note</span
+                  >
+                </div>
+                <h3 class="font-manrope font-bold text-slate-800">
+                  Catatan Observasi &amp; Diagnosis
+                </h3>
+              </div>
+              <div class="p-6 space-y-5">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                    >Observasi Medis</label
+                  >
+                  <textarea
+                    class="w-full px-4 py-3 rounded-xl border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-body-md"
+                    placeholder="Tuliskan keluhan pasien, pemeriksaan fisik, dan temuan klinis di sini..."
+                    rows="6"
+                  ></textarea>
+                </div>
+                <div class="w-1/2">
+                  <label
+                    class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
+                    >Diagnosis Utama (ICD-10)</label
+                  >
+                  <div class="relative">
+                    <span
+                      class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 text-sm"
+                      >search</span
+                    >
+                    <input
+                      class="w-full pl-10 pr-4 py-3 rounded-xl border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-mono"
+                      placeholder="Cari Kode atau Nama Penyakit (e.g. J00 - Common Cold)"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Section Resep Obat -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
+            >
+              <div
+                class="p-5 border-b border-slate-100 flex items-center justify-between"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >prescriptions</span
+                    >
+                  </div>
+                  <h3 class="font-manrope font-bold text-slate-800">
+                    Resep Obat &amp; Instruksi
+                  </h3>
+                </div>
+                <button
+                  class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold transition-all shadow-sm active:scale-95"
+                >
+                  <span class="material-symbols-outlined text-sm">add</span>
+                  Tambah Obat
+                </button>
+              </div>
+              <div class="p-0">
+                <table class="w-full text-left">
+                  <thead class="bg-slate-50 border-b border-slate-100">
+                    <tr>
+                      <th
+                        class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider"
+                      >
+                        Nama Obat
+                      </th>
+                      <th
+                        class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32"
+                      >
+                        Dosis
+                      </th>
+                      <th
+                        class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider"
+                      >
+                        Instruksi Pakai
+                      </th>
+                      <th
+                        class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-16"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-50">
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-800 p-0"
+                          type="text"
+                          value="Paracetamol 500mg"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-800 p-0"
+                          type="text"
+                          value="3 x 1"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-800 p-0"
+                          type="text"
+                          value="Sesudah makan, jika demam"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <button
+                          class="text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-lg"
+                            >delete</span
+                          >
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition-colors">
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm italic text-slate-400 p-0"
+                          placeholder="Ketik nama obat..."
+                          type="text"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm italic text-slate-400 p-0"
+                          placeholder="-"
+                          type="text"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <input
+                          class="w-full bg-transparent border-none focus:ring-0 text-sm italic text-slate-400 p-0"
+                          placeholder="-"
+                          type="text"
+                        />
+                      </td>
+                      <td class="px-6 py-4">
+                        <button class="text-slate-300 pointer-events-none">
+                          <span class="material-symbols-outlined text-lg"
+                            >delete</span
+                          >
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Footer Action -->
+            <div
+              class="flex items-center justify-between p-6 bg-white rounded-xl border border-slate-200 shadow-sm"
+            >
+              <div class="flex items-center gap-2 text-slate-400">
+                <span class="material-symbols-outlined text-sm"
+                  >cloud_done</span
+                >
+                <span class="text-xs font-medium italic"
+                  >Draft otomatis disimpan pada 12:48</span
+                >
+              </div>
+              <div class="flex gap-4">
+                <button
+                  class="px-8 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition-all active:scale-95"
+                >
+                  Simpan Draft
+                </button>
+                <button
+                  onclick="window.location.href = 'Konfirmasimedis.html'"
+                  class="px-8 py-3 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined">send</span>
+                  Selesaikan &amp; Kirim
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
